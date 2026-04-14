@@ -6,8 +6,9 @@
     <title>Light Spring Hotel | Where Comfort Meets Luxury</title>
     <meta
       name="description"
-      content="Light Spring Hotel offers elegant rooms, premium amenities, and seamless hospitality. Book your luxury stay today."
+      content="Light Spring Hotel in Ojodu Berger, Lagos offers elegant rooms, premium amenities, and seamless hospitality. Affordable stays, amazing experiences."
     />
+    <meta name="theme-color" content="#0b0b0b" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,27 +18,50 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header" id="top">
       <div class="container nav-wrap">
-        <a href="#" class="brand">LIGHT SPRING HOTEL</a>
-        <nav class="nav-links">
+        <a href="#home" class="brand">LIGHT SPRING HOTEL</a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav-links" aria-label="Primary navigation">
           <a href="#rooms">Rooms</a>
           <a href="#amenities">Amenities</a>
           <a href="#offers">Offers</a>
           <a href="#contact">Contact</a>
+          <a href="rooms.html">All Rooms</a>
         </nav>
-        <a href="#booking" class="btn btn-primary">Book Now</a>
+
+        <a href="#booking" class="btn btn-primary header-cta">Book Now</a>
       </div>
+
+      <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+        <a href="#rooms">Rooms</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#offers">Offers</a>
+        <a href="#contact">Contact</a>
+        <a href="rooms.html">All Rooms</a>
+      </nav>
     </header>
 
-    <main>
-      <section class="hero" id="home">
+    <main id="main-content">
+      <section class="hero reveal" id="home">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
           <p class="eyebrow">Welcome to Light Spring Hotel</p>
           <h1>Where Comfort Meets Luxury</h1>
           <p>
-            Enjoy elegant rooms, refined hospitality, and a tranquil atmosphere tailored for both business and leisure travelers.
+            You don’t just check in — you arrive into comfort. Every detail is intentionally crafted to help you relax,
+            work, and recharge.
           </p>
           <div class="hero-actions">
             <a href="#booking" class="btn btn-primary">Reserve Your Stay</a>
@@ -46,41 +70,50 @@
         </div>
       </section>
 
-      <section class="booking" id="booking">
+      <section class="booking reveal" id="booking">
         <div class="container">
           <h2>Quick Reservation</h2>
-          <form class="booking-form">
+          <p class="section-note">Seamless hospitality that anticipates your needs. Fill this quick form and we will confirm availability.</p>
+
+          <form class="booking-form" id="booking-form" novalidate>
             <label>
               Check-in
-              <input type="date" />
+              <input type="date" id="checkin" name="checkin" required />
             </label>
             <label>
               Check-out
-              <input type="date" />
+              <input type="date" id="checkout" name="checkout" required />
             </label>
             <label>
               Guests
-              <select>
-                <option>1 Guest</option>
-                <option>2 Guests</option>
-                <option>3 Guests</option>
-                <option>4 Guests</option>
+              <select id="guests" name="guests" required>
+                <option value="">Select guests</option>
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
               </select>
             </label>
             <label>
               Room Type
-              <select>
-                <option>Deluxe Room</option>
-                <option>Executive Room</option>
-                <option>Suite</option>
+              <select id="roomType" name="roomType" required>
+                <option value="">Select room type</option>
+                <option value="Deluxe Room">Deluxe Room</option>
+                <option value="Executive Room">Executive Room</option>
+                <option value="Luxury Suite">Luxury Suite</option>
               </select>
             </label>
-            <button type="button" class="btn btn-primary">Check Availability</button>
+            <button type="submit" class="btn btn-primary">Check Availability</button>
           </form>
+          <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
+          <div class="booking-links">
+            <a class="inline-link" href="reservation.html">Open full reservation page</a>
+            <a class="inline-link" href="mailto:info@lightspringhotels.online?subject=Reservation%20Inquiry">Send email inquiry</a>
+          </div>
         </div>
       </section>
 
-      <section class="rooms" id="rooms">
+      <section class="rooms reveal" id="rooms">
         <div class="container">
           <h2>Featured Rooms & Suites</h2>
           <div class="grid three">
@@ -103,7 +136,7 @@
         </div>
       </section>
 
-      <section class="amenities" id="amenities">
+      <section class="amenities reveal" id="amenities">
         <div class="container">
           <h2>Amenities & Features</h2>
           <div class="grid two">
@@ -123,32 +156,60 @@
         </div>
       </section>
 
-      <section class="offers" id="offers">
+      <section class="offers reveal" id="offers">
         <div class="container callout">
           <h2>Special Offer</h2>
           <p>Book directly with us and enjoy up to <strong>15% OFF</strong> selected stays.</p>
-          <a href="#booking" class="btn btn-primary">Claim Offer</a>
+          <a
+            href="https://wa.me/2348118620454?text=Hello%20Light%20Spring%20Hotel%2C%20I%20want%20to%20claim%20the%20special%20offer."
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Claim Offer</a
+          >
         </div>
       </section>
     </main>
 
-    <footer class="site-footer" id="contact">
+    <footer class="site-footer reveal" id="contact">
       <div class="container footer-grid">
         <div>
           <h3>Light Spring Hotel</h3>
           <p>Affordable stays, amazing experiences.</p>
+          <p>No. 20, Odozi Street, Ojodu Berger, Lagos</p>
         </div>
         <div>
           <h4>Contact</h4>
-          <p>0811 862 0454</p>
-          <p>0911 131 0601</p>
-          <p>info@lightspringhotels.online</p>
+          <p><a href="tel:+2348118620454">08118620454</a></p>
+          <p><a href="tel:+2349113106011">09113106011</a></p>
+          <p><a href="mailto:info@lightspringhotels.online">info@lightspringhotels.online</a></p>
+          <p>
+            <a href="https://wa.me/2348118620454?text=Hello%20Light%20Spring%20Hotel%2C%20I%20want%20to%20make%20a%20reservation."
+              >WhatsApp Chat</a
+            >
+          </p>
         </div>
         <div>
-          <h4>Address</h4>
-          <p>Luxury District, Abuja, Nigeria</p>
+          <h4>Explore</h4>
+          <p><a href="about.html">About</a> · <a href="gallery.html">Gallery</a></p>
+          <p><a href="faq.html">FAQ</a> · <a href="privacy.html">Privacy Policy</a></p>
+          <p><a href="#top">Back to top</a></p>
         </div>
       </div>
+      <div class="container footer-base">
+        <small>© <span id="year"></span> Light Spring Hotel. All rights reserved.</small>
+      </div>
     </footer>
+
+    <a
+      class="whatsapp-float"
+      href="https://wa.me/2348118620454?text=Hello%20Light%20Spring%20Hotel%2C%20I%20would%20like%20to%20book%20a%20stay."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat with Light Spring Hotel on WhatsApp"
+      >WhatsApp</a
+    >
+
+    <script src="script.js"></script>
   </body>
 </html>

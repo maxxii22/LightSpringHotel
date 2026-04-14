@@ -5,10 +5,16 @@
   --gold-soft: #e5c97a;
   --text: #f5f2ea;
   --muted: #b7b1a2;
+  --ok: #7dd37d;
+  --error: #ff9f9f;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -19,6 +25,21 @@ body {
   line-height: 1.6;
 }
 
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 90;
+  background: #fff;
+  color: #111;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+}
+
 .container {
   width: min(1100px, 92%);
   margin: 0 auto;
@@ -27,7 +48,7 @@ body {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 40;
   background: rgba(11, 11, 11, 0.92);
   border-bottom: 1px solid rgba(201, 162, 79, 0.4);
   backdrop-filter: blur(6px);
@@ -38,7 +59,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem 0;
+  padding: 0.85rem 0;
 }
 
 .brand,
@@ -54,20 +75,53 @@ h4 {
   font-weight: 700;
   letter-spacing: 0.06em;
   text-decoration: none;
+  white-space: nowrap;
 }
 
-.nav-links {
+.nav-links,
+.mobile-menu {
   display: flex;
   gap: 1rem;
 }
 
-.nav-links a {
+.nav-links a,
+.mobile-menu a,
+.site-footer a {
   color: var(--text);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.mobile-menu a:hover,
+.site-footer a:hover,
+.nav-links a.active,
+.mobile-menu a.active {
   color: var(--gold-soft);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid rgba(201, 162, 79, 0.45);
+  border-radius: 8px;
+  width: 44px;
+  height: 40px;
+  padding: 8px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 5px 0;
+  background: var(--gold-soft);
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  padding: 0 4% 0.8rem;
 }
 
 .hero {
@@ -115,7 +169,21 @@ h2 {
   font-weight: 600;
   text-decoration: none;
   border: 1px solid var(--gold);
-  transition: all 0.25s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:focus-visible,
+input:focus-visible,
+select:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gold-soft);
+  outline-offset: 2px;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
 }
 
 .btn-primary {
@@ -145,6 +213,12 @@ h2 {
 
 section {
   padding: 4.5rem 0;
+  scroll-margin-top: 88px;
+}
+
+.section-note {
+  margin-top: -0.6rem;
+  color: var(--muted);
 }
 
 .booking-form {
@@ -168,6 +242,30 @@ select {
   padding: 0.6rem;
 }
 
+.form-feedback {
+  min-height: 1.5rem;
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.form-feedback.success {
+  color: var(--ok);
+}
+
+.form-feedback.error {
+  color: var(--error);
+}
+
+.booking-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.inline-link {
+  color: var(--gold-soft);
+}
+
 .grid {
   display: grid;
   gap: 1rem;
@@ -186,6 +284,12 @@ select {
   border: 1px solid rgba(201, 162, 79, 0.45);
   border-radius: 12px;
   padding: 1.2rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(229, 201, 122, 0.75);
 }
 
 .price {
@@ -212,12 +316,12 @@ select {
 
 .site-footer {
   border-top: 1px solid rgba(201, 162, 79, 0.35);
-  padding: 2.4rem 0 3.2rem;
+  padding: 2.4rem 0 1.4rem;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr 1fr;
   gap: 1rem;
 }
 
@@ -226,9 +330,53 @@ select {
   color: var(--muted);
 }
 
+.footer-base {
+  border-top: 1px solid rgba(201, 162, 79, 0.15);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  color: var(--muted);
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  background: #1faa5a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 45;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (max-width: 900px) {
+  .header-cta {
+    display: none;
+  }
+
   .nav-links {
     display: none;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .mobile-menu.open {
+    display: flex;
   }
 
   .booking-form,
