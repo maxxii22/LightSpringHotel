@@ -57,14 +57,20 @@ a {
 
 .section {
   padding: 4.25rem 0;
+  background: var(--bg);
+}
+
+.section:nth-of-type(even) {
+  background: #0f0f0f;
 }
 
 .skip-link {
   position: absolute;
   left: 0.5rem;
   top: -4rem;
-  background: #fff;
-  color: #000;
+  background: #151515;
+  color: var(--primary-strong);
+  border: 1px solid var(--line);
   padding: 0.5rem 0.8rem;
   border-radius: 8px;
   z-index: 100;
