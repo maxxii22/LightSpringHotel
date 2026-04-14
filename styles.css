@@ -1,14 +1,15 @@
 :root {
-  --bg: #f6f6f3;
-  --surface: #ffffff;
-  --surface-soft: #f1f1ec;
-  --text: #1b1f24;
-  --muted: #5b6470;
-  --line: #d7dbdf;
-  --primary: #1f3f54;
-  --primary-strong: #17303f;
+  --bg: #0b0b0b;
+  --surface: #131313;
+  --surface-soft: #101010;
+  --surface-elevated: #181818;
+  --text: #f5f1e8;
+  --muted: #c9bfa8;
+  --line: rgba(212, 177, 102, 0.35);
+  --primary: #d4b166;
+  --primary-strong: #e2c98e;
   --radius: 14px;
-  --shadow: 0 10px 25px rgba(20, 30, 45, 0.06);
+  --shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
 
 * {
@@ -34,6 +35,7 @@ h3 {
   font-family: "Playfair Display", Georgia, serif;
   letter-spacing: 0.01em;
   line-height: 1.2;
+  color: var(--primary-strong);
 }
 
 p {
@@ -76,7 +78,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(246, 246, 243, 0.95);
+  background: rgba(11, 11, 11, 0.94);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(8px);
 }
@@ -104,7 +106,7 @@ a {
   display: grid;
   place-items: center;
   font-size: 0.78rem;
-  color: #fff;
+  color: #141414;
   background: var(--primary);
 }
 
@@ -117,7 +119,7 @@ a {
 .nav-links a,
 .footer-links a {
   text-decoration: none;
-  color: var(--muted);
+  color: #e1d8c6;
   transition: color 160ms ease;
 }
 
@@ -125,11 +127,11 @@ a {
 .nav-links a:focus-visible,
 .footer-links a:hover,
 .footer-links a:focus-visible {
-  color: var(--primary);
+  color: var(--primary-strong);
 }
 
 .hero {
-  background: linear-gradient(150deg, #f8f8f6, #eef2f4);
+  background: linear-gradient(160deg, #0b0b0b, #17130d 55%, #0f0f0f);
   border-bottom: 1px solid var(--line);
 }
 
@@ -156,7 +158,7 @@ h2 {
 
 .hero-copy,
 .section-intro {
-  color: var(--muted);
+  color: #ddd1b7;
   max-width: 62ch;
 }
 
@@ -184,7 +186,7 @@ h2 {
 
 .btn-primary {
   background: var(--primary);
-  color: #fff;
+  color: #17120c;
 }
 
 .btn-primary:hover,
@@ -194,24 +196,24 @@ h2 {
 
 .btn-outline {
   border-color: var(--line);
-  background: #fff;
+  background: transparent;
   color: var(--text);
 }
 
 .btn-outline:hover,
 .btn-outline:focus-visible {
-  border-color: #b8c0c8;
+  border-color: rgba(212, 177, 102, 0.75);
 }
 
 .btn-ghost {
-  color: var(--primary);
-  border-color: #cad4db;
-  background: transparent;
+  color: var(--primary-strong);
+  border-color: rgba(212, 177, 102, 0.55);
+  background: rgba(212, 177, 102, 0.08);
 }
 
 .booking-form {
   margin-top: 1.2rem;
-  background: var(--surface);
+  background: var(--surface-elevated);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 1rem;
@@ -225,7 +227,7 @@ h2 {
   display: block;
   margin-bottom: 0.35rem;
   font-size: 0.92rem;
-  color: #37414c;
+  color: #f0e6d1;
 }
 
 input,
@@ -233,9 +235,9 @@ select {
   width: 100%;
   min-height: 2.7rem;
   padding: 0.55rem 0.7rem;
-  border: 1px solid #cfd5db;
+  border: 1px solid rgba(212, 177, 102, 0.45);
   border-radius: 10px;
-  background: #fff;
+  background: #0f0f0f;
   color: var(--text);
   font: inherit;
 }
@@ -244,7 +246,7 @@ input:focus,
 select:focus,
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid #275a78;
+  outline: 2px solid var(--primary);
   outline-offset: 1px;
 }
 
@@ -258,7 +260,7 @@ a:focus-visible {
 #form-message {
   min-height: 1.2rem;
   font-size: 0.93rem;
-  color: var(--muted);
+  color: #e1d6bd;
   margin: 0;
 }
 
@@ -286,12 +288,12 @@ a:focus-visible {
 }
 
 .card p {
-  color: var(--muted);
+  color: #d4c8ad;
 }
 
 .price {
   margin-top: 0.8rem;
-  color: var(--primary);
+  color: var(--primary-strong);
   font-weight: 700;
 }
 
@@ -313,7 +315,7 @@ a:focus-visible {
 }
 
 .offer-card p {
-  color: var(--muted);
+  color: #d8ccb2;
   margin-bottom: 1rem;
 }
 
@@ -326,11 +328,11 @@ a:focus-visible {
 
 .contact-grid p {
   margin-bottom: 0.5rem;
-  color: #303944;
+  color: #d8ccb2;
 }
 
 .contact-grid a {
-  color: var(--primary);
+  color: var(--primary-strong);
   text-decoration: none;
 }
 
@@ -361,6 +363,7 @@ a:focus-visible {
 .footer-brand {
   font-weight: 700;
   font-family: "Playfair Display", Georgia, serif;
+  color: var(--primary-strong);
 }
 
 .footer-links {
@@ -369,7 +372,7 @@ a:focus-visible {
 }
 
 .copyright {
-  color: var(--muted);
+  color: #d4c7aa;
   font-size: 0.93rem;
   text-align: right;
 }
