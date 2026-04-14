@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Light Spring Hotel | Where Comfort Meets Luxury</title>
+    <meta
+      name="description"
+      content="Light Spring Hotel in Ojodu Berger, Lagos offers elegant rooms, seamless hospitality, and affordable luxury stays for business and leisure travelers."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <a class="logo" href="index.html" aria-label="Light Spring Hotel home">
+          <span class="logo-mark">LS</span>
+          <span>
+            <strong>LIGHT SPRING HOTEL</strong>
+            <small>Where Comfort Meets Luxury</small>
+          </span>
+        </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
+          <a href="index.html" data-page="home">Home</a>
+          <a href="rooms.html" data-page="rooms">Rooms</a>
+          <a href="amenities.html" data-page="amenities">Amenities</a>
+          <a href="offers.html" data-page="offers">Offers</a>
+          <a href="contact.html" data-page="contact">Contact</a>
+          <a class="btn btn-primary nav-cta" href="#booking">Book Now</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero section-dark reveal" id="home">
+        <div class="container hero-grid">
+          <article>
+            <p class="eyebrow">Welcome to Light Spring Hotel, Lagos</p>
+            <h1>Where Comfort Meets Luxury</h1>
+            <p class="hero-copy">
+              You don’t just check in — you arrive into comfort. Every detail is intentionally crafted to help you relax,
+              work, and recharge in the heart of Ojodu Berger.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#booking">Reserve Your Stay</a>
+              <a class="btn btn-outline" href="rooms.html">Explore Rooms</a>
+              <a class="btn btn-whatsapp" href="https://wa.me/2348118620454?text=Hello%20Light%20Spring%20Hotel%2C%20I%20want%20to%20book%20a%20room." target="_blank" rel="noopener">Chat on WhatsApp</a>
+            </div>
+          </article>
+          <aside class="hero-panel" aria-label="Guest highlights">
+            <h2>Affordable stays, amazing experiences</h2>
+            <ul>
+              <li>Fast check-in and responsive support</li>
+              <li>Business-ready comfort with reliable power and internet</li>
+              <li>Peaceful hospitality for weekend and leisure escapes</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section reveal" id="booking">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Reservations</p>
+            <h2>Check Availability</h2>
+            <p>Send a booking inquiry in under a minute. Our team will confirm your reservation details promptly.</p>
+          </div>
+          <form id="booking-form" class="booking-form" novalidate>
+            <label>
+              Full Name
+              <input type="text" name="name" required minlength="2" autocomplete="name" />
+              <small class="error" aria-live="polite"></small>
+            </label>
+            <label>
+              Phone Number
+              <input type="tel" name="phone" required pattern="[0-9+\s-]{10,}" autocomplete="tel" />
+              <small class="error" aria-live="polite"></small>
+            </label>
+            <label>
+              Email Address
+              <input type="email" name="email" required autocomplete="email" />
+              <small class="error" aria-live="polite"></small>
+            </label>
+            <label>
+              Check-in Date
+              <input type="date" name="checkin" required />
+              <small class="error" aria-live="polite"></small>
+            </label>
+            <label>
+              Check-out Date
+              <input type="date" name="checkout" required />
+              <small class="error" aria-live="polite"></small>
+            </label>
+            <label>
+              Guests
+              <select name="guests" required>
+                <option value="">Select guests</option>
+                <option>1 Guest</option>
+                <option>2 Guests</option>
+                <option>3 Guests</option>
+                <option>4 Guests</option>
+              </select>
+              <small class="error" aria-live="polite"></small>
+            </label>
+            <label>
+              Room Type
+              <select name="room" required>
+                <option value="">Select room</option>
+                <option>Deluxe Room — From ₦45,000 / night</option>
+                <option>Executive Room — From ₦60,000 / night</option>
+                <option>Luxury Suite — From ₦95,000 / night</option>
+              </select>
+              <small class="error" aria-live="polite"></small>
+            </label>
+            <label class="full-width">
+              Additional Notes
+              <textarea name="notes" rows="4" placeholder="Tell us anything important for your stay."></textarea>
+            </label>
+            <div class="form-actions full-width">
+              <button type="submit" class="btn btn-primary">Check Availability</button>
+              <a class="btn btn-outline" href="tel:+2348118620454">Call Front Desk</a>
+            </div>
+            <p id="booking-feedback" class="form-feedback full-width" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="section section-dark reveal" id="trust">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Why guests choose us</p>
+            <h2>Seamless hospitality that anticipates your needs</h2>
+          </div>
+          <div class="cards three-col">
+            <article class="card">
+              <h3>Business-Ready Comfort</h3>
+              <p>High-speed Wi-Fi, reliable 24/7 power, and calm spaces to focus between meetings.</p>
+            </article>
+            <article class="card">
+              <h3>Peaceful Guest Experience</h3>
+              <p>Thoughtful room design and attentive service for guests who value rest and privacy.</p>
+            </article>
+            <article class="card">
+              <h3>Easy Access in Lagos</h3>
+              <p>Located at No. 20, Odozi Street, Ojodu Berger, with direct routes to key city hubs.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="highlights">
+        <div class="container split">
+          <article>
+            <div class="section-head">
+              <p class="eyebrow">Guest Experience Highlights</p>
+              <h2>Details that make every stay smoother</h2>
+            </div>
+            <ul class="checklist">
+              <li>Fully Air-Conditioned Rooms</li>
+              <li>On-Site Restaurant &amp; Bar</li>
+              <li>24/7 Security &amp; CCTV Surveillance</li>
+              <li>Conference / Meeting Hall for teams and events</li>
+              <li>Airport Transfer on Request</li>
+            </ul>
+            <a class="btn btn-outline" href="amenities.html">View All Amenities</a>
+          </article>
+          <article class="review-card" aria-label="Guest review style section">
+            <h3>What guests appreciate most</h3>
+            <blockquote>
+              “The service is warm, the rooms are clean, and everything works the way it should. Great value for Lagos.”
+            </blockquote>
+            <p>— Recent Guest Feedback</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-dark reveal" id="gallery-preview">
+        <div class="container">
+          <div class="section-head row-between">
+            <div>
+              <p class="eyebrow">Gallery Preview</p>
+              <h2>Preview the atmosphere before you arrive</h2>
+            </div>
+            <a class="btn btn-outline" href="rooms.html#gallery">See Full Gallery</a>
+          </div>
+          <div class="gallery-grid" role="list" aria-label="Hotel gallery preview">
+            <div class="gallery-item" role="listitem">Suite Interior</div>
+            <div class="gallery-item" role="listitem">Restaurant &amp; Bar</div>
+            <div class="gallery-item" role="listitem">Meeting Hall</div>
+            <div class="gallery-item" role="listitem">Reception Area</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="faq">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">FAQ</p>
+            <h2>Questions guests ask before booking</h2>
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary>Do you accept same-day bookings?</summary>
+              <p>Yes. Call or send a WhatsApp message and we’ll confirm availability immediately.</p>
+            </details>
+            <details>
+              <summary>Is airport transfer available?</summary>
+              <p>Yes, airport transfer can be arranged on request during booking.</p>
+            </details>
+            <details>
+              <summary>Do you host business meetings?</summary>
+              <p>Yes, we offer a conference/meeting hall and team-friendly support.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-dark reveal" id="location">
+        <div class="container split">
+          <article>
+            <div class="section-head">
+              <p class="eyebrow">Location & Accessibility</p>
+              <h2>Easy to find, comfortable to stay</h2>
+            </div>
+            <p>
+              We are located at <strong>No. 20, Odozi Street, Ojodu Berger, Lagos</strong>, giving guests practical access to both
+              business and leisure routes.
+            </p>
+            <p class="contact-links">
+              <a href="tel:+2348118620454">08118620454</a>
+              <a href="tel:+2349113106011">09113106011</a>
+              <a href="mailto:info@lightspringhotels.online">info@lightspringhotels.online</a>
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://maps.google.com/?q=No.+20+Odozi+Street+Ojodu+Berger+Lagos" target="_blank" rel="noopener">Get Directions</a>
+              <a class="btn btn-outline" href="contact.html">Contact Us</a>
+            </div>
+          </article>
+          <article class="map-placeholder">
+            <iframe
+              title="Map placeholder for Light Spring Hotel"
+              src="https://maps.google.com/maps?q=Ojodu%20Berger%20Lagos&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <section>
+          <h3>Light Spring Hotel</h3>
+          <p>Affordable stays, amazing experiences.</p>
+          <p>No. 20, Odozi Street, Ojodu Berger, Lagos</p>
+        </section>
+        <section>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="rooms.html">Rooms</a></li>
+            <li><a href="amenities.html">Amenities</a></li>
+            <li><a href="offers.html">Offers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </section>
+        <section>
+          <h4>Get in Touch</h4>
+          <p><a href="tel:+2348118620454">08118620454</a></p>
+          <p><a href="tel:+2349113106011">09113106011</a></p>
+          <p><a href="mailto:info@lightspringhotels.online">info@lightspringhotels.online</a></p>
+          <div class="socials" aria-label="Social media links">
+            <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://x.com" target="_blank" rel="noopener">X</a>
+          </div>
+        </section>
+      </div>
+      <div class="container footer-bottom">
+        <small>&copy; <span id="year"></span> Light Spring Hotel. All rights reserved.</small>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </footer>
+
+    <a class="floating-whatsapp" href="https://wa.me/2348118620454?text=Hello%20Light%20Spring%20Hotel%2C%20I%20need%20help%20with%20a%20reservation." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      WhatsApp
+    </a>
+
+    <script src="script.js"></script>
+  </body>
+</html>
